@@ -3,10 +3,8 @@ set laststatus=2
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 
-execute pathogen#infect()
-
-" Highlight line number of where cursor currently is
-hi CursorLineNr guifg=#050505
+" Highlight current line
+set cursorline
 
 " Numbers
 set number
@@ -23,21 +21,22 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline_theme='solarized'
 set t_Co=256
 
-
+" Plugins
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 call vundle#end()
+
+
 filetype plugin indent on
 
 " Color scheme
-colorscheme solarized
+colorscheme molokai 
 set background=dark
 set encoding=utf-8
