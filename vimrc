@@ -27,6 +27,7 @@ set t_Co=256
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tomasr/molokai'
+Plugin 'edkolev/tmuxline.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
