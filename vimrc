@@ -3,6 +3,7 @@ set laststatus=2
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 
+set autoindent
 syntax on
 
 " Highlight current line
