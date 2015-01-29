@@ -30,7 +30,7 @@ map <F9> :NERDTreeFind<CR>
 " Airline statusbar
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
 set t_Co=256
@@ -40,7 +40,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tomasr/molokai'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
@@ -53,3 +53,4 @@ filetype plugin indent on
 colorscheme molokai 
 set background=dark
 set encoding=utf-8
+
