@@ -8,6 +8,15 @@ syntax on
 " Highlight current line
 set cursorline
 
+" No hard tabs
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+"Tab width
+set shiftwidth=2
+set tabstop=2
+
 " Numbers
 set number
 set numberwidth=5
