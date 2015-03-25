@@ -40,10 +40,12 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tomasr/molokai'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 
@@ -54,3 +56,5 @@ colorscheme molokai
 set background=dark
 set encoding=utf-8
 
+" Vim-go silent errors
+let g:go_fmt_fail_silently = 1
