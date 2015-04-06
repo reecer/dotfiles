@@ -55,6 +55,3 @@ filetype plugin indent on
 colorscheme molokai 
 set background=dark
 set encoding=utf-8
-
-" Vim-go silent errors
-let g:go_fmt_fail_silently = 1
