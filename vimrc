@@ -5,6 +5,13 @@ filetype off
 
 set autoindent
 syntax on
+filetype on
+
+" Go files
+au BufNewFile,BufRead *.go set filetype=go
+
+" No line wrap
+set nowrap
 
 " Highlight current line
 set cursorline
