@@ -1,4 +1,5 @@
-; -*- mode: Lisp;-*-
+; -*-Lisp-*-
+
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -8,12 +9,10 @@
 ;; Auto-install helper
 (defun ensure-package-installed (&rest packages)
   (mapcar
-   (lambda (package)
-     (if (package-installed-p package)
-         nil
-         (package-install package)
-         package))
-   packages))
+    (lambda (package)
+      (unless (package-installed-p package)
+        (package-install package)))
+  packages))
 
 ;; Make sure to have downloaded archive description.
 (or (file-exists-p package-user-dir)
@@ -24,15 +23,30 @@
 
 ;; Install packages
 (ensure-package-installed 'evil 
-			  'helm
-		          'neotree
-			  'clojure-mode)
+                          'helm
+                          'neotree
+                          'jsx-mode
+                          'clojure-mode)
 
 ;;
 ;; Custom settings
 ;;
 
+;; No menu bar
 (menu-bar-mode -1)
+
+;; 2-space indentation
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq evil-shift-width 2)
+(defvaralias 'c-basic-offset 'tab-width)
+
+;; Highlight parenthesis
+(show-paren-mode 1)
+
+;; Modes
+(require 'jsx-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 
 ;; Evil mode
 (require 'evil)
@@ -46,9 +60,16 @@
 (require 'neotree)
 (global-set-key [f9] 'neotree-toggle)
 (add-hook 'neotree-mode-hook
-    (lambda ()
-	(define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-	(define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
-	(define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-	(define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
+  (lambda ()
+    (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+    (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+    (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+    (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
+
+;; powerline
+(require 'powerline-evil)
+;(powerline-default-theme)
+(powerline-evil-vim-color-theme)
+(display-time-mode t)
+(setq powerline-evil-tag-style 'verbose)
