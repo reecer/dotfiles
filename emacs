@@ -16,9 +16,11 @@
  evil 
  helm
  neotree
+ powerline-evil
  jsx-mode
  auto-complete
  clojure-mode
+ go-autocomplete
  go-mode))
 
 ;; Install packages
@@ -92,3 +94,8 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+(defun switch-to-previous-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(global-set-key (kbd "C-x o") 'switch-to-previous-buffer)
