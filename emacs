@@ -11,6 +11,9 @@
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 
+;; backup NOT in editing dir
+(setq backup-directory-alist `(("." . "~/.emacs.d/.backups")))
+
 
 (defvar custom-packages '(
  evil 
@@ -19,6 +22,7 @@
  powerline-evil
  jsx-mode
  auto-complete
+ elixir-mode
  clojure-mode
  go-autocomplete
  go-mode))
@@ -76,6 +80,7 @@
 (global-set-key [f9] 'neotree-toggle)
 (add-hook 'neotree-mode-hook
   (lambda ()
+    (define-key evil-normal-state-local-map (kbd "r") 'neotree-refresh)
     (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
     (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
     (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
@@ -99,3 +104,4 @@
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (global-set-key (kbd "C-x o") 'switch-to-previous-buffer)
+(put 'downcase-region 'disabled nil)
