@@ -1,0 +1,11 @@
+#
+# ~/.config/alacritty/alacritty.toml
+#
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/ayu_mirage.toml"
+]
+
+[window]
+decorations = "None"
