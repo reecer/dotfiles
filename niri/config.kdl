@@ -260,6 +260,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+spawn-at-startup "nm-applet"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -385,19 +386,19 @@ binds {
     // Reece: Vim-like keybinds
     // Move windows
     Ctrl+Shift+Alt+H     { move-column-left; }
-    Ctrl+Shift+Alt+J     { move-window-down; }
-    Ctrl+Shift+Alt+K     { move-window-up; }
+    Ctrl+Shift+Alt+N     { move-window-down; }
+    Ctrl+Shift+Alt+I     { move-window-up; }
     Ctrl+Shift+Alt+L     { move-column-right; }
-    Ctrl+Alt+Shift+U     { move-column-to-workspace-down; }
-    Ctrl+Alt+Shift+I     { move-column-to-workspace-up; }
+    Ctrl+Alt+Shift+J     { move-column-to-workspace-down; }
+    Ctrl+Alt+Shift+K     { move-column-to-workspace-up; }
 
     // Move focus
     Ctrl+Alt+H     { focus-column-left; }
-    Ctrl+Alt+J     { focus-window-down; }
-    Ctrl+Alt+K     { focus-window-up; }
+    Ctrl+Alt+N     { focus-window-down; }
+    Ctrl+Alt+I     { focus-window-up; }
     Ctrl+Alt+L     { focus-column-right; }
-    Ctrl+Alt+U     { focus-workspace-down; }
-    Ctrl+Alt+I     { focus-workspace-up; }
+    Ctrl+Alt+J     { focus-workspace-down; }
+    Ctrl+Alt+K     { focus-workspace-up; }
 
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.

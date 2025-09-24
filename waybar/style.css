@@ -5,20 +5,17 @@
 
 window#waybar {
     /* background-color: rgba(0, 0, 0, 0); */
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     /* color: #ffffff; */
     background: transparent;
     /* transition-property: background-color; */
     /* transition-duration: .5s; */
+    /* margin: 10px; */
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
-
-window#waybar {
-    min-width: 100px;
-} 
 
 /*
 window#waybar.empty {
@@ -338,13 +335,18 @@ label:focus {
 }
 
 
+#taskbar button {
+    /* width: 0; */
+    /* display: none; */
+    opacity: 0;
+}
 #taskbar button.active {
     background-color: #64727D;
-    /* border-radius: 5px 5px 15px 15px; */
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px;
+    opacity: 1;
 }
 #taskbar {
-    min-height: 30px;
+    /* min-height: 30px; */
     /* overflow: hidden; */
     /* background: rgba(0, 0, 0, 0.2); */
 }

@@ -5,9 +5,12 @@
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
+        "niri/workspaces",
         "sway/mode",
         "sway/scratchpad"
     ],
@@ -31,7 +34,7 @@
         "custom/power"
     ],
     // Modules configuration
-    // "sway/workspaces": {
+    // "niri/workspaces": {
     //     "disable-scroll": true,
     //     "all-outputs": true,
     //     "warp-on-scroll": false,
@@ -48,7 +51,9 @@
     //     }
     // },
     "wlr/taskbar": {
-        "tooltip-format": "{title} | {app_id}"
+        "format": "{name}",
+        "tooltip-format": "{title} | {app_id}",
+        "icon-size": 20
     },
     "keyboard-state": {
         "numlock": true,

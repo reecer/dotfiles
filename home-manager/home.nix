@@ -38,11 +38,10 @@
     pkgs.bat
     pkgs.ghostty
     pkgs.pavucontrol
-    # pkgs.networkmanager
+    pkgs.networkmanager
     pkgs.networkmanagerapplet
+    pkgs.networkmanager-openvpn
     pkgs.inotify-tools
-    # pkgs.gnomeExtensions.pop-shell 
-    # pkgs.swaynotificationcenter
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
