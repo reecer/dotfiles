@@ -37,6 +37,10 @@
     pkgs.neovim
     pkgs.bat
     pkgs.ghostty
+    pkgs.pavucontrol
+    # pkgs.networkmanager
+    pkgs.networkmanagerapplet
+    pkgs.inotify-tools
     # pkgs.gnomeExtensions.pop-shell 
     # pkgs.swaynotificationcenter
   ];
