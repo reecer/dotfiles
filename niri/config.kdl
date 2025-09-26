@@ -605,4 +605,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    Ctrl+Page_Down        allow-when-locked=true { spawn-sh "playerctl next"; }
+    Ctrl+Page_Up          allow-when-locked=true { spawn-sh "playerctl previous"; }
+    Ctrl+End              allow-when-locked=true { spawn-sh "playerctl play-pause"; }
 }
