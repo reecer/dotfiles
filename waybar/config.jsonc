@@ -31,6 +31,7 @@
         "battery",
         "clock",
         "tray",
+        "custom/notification",
         "custom/power"
     ],
     // Modules configuration
@@ -209,6 +210,16 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{0} ",
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "custom/power": {
         "format" : "⏻",

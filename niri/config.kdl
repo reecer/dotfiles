@@ -261,6 +261,9 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
+spawn-at-startup "wl-paste --watch cliphist store"
+
+
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -399,6 +402,9 @@ binds {
     Ctrl+Alt+L     { focus-column-right; }
     Ctrl+Alt+J     { focus-workspace-down; }
     Ctrl+Alt+K     { focus-workspace-up; }
+
+    // Clipboard history
+    Alt+Shift+C { spawn "sh" "-c" "cliphist list | fuzzel --dmenu --with-nth 2 -w 100 | cliphist decode | wl-copy"; }
 
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.
