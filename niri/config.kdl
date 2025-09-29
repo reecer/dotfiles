@@ -261,6 +261,9 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
+spawn-at-startup "blueman-applet"
+
+// Clipboard history with cliphist. See binds section below for copy usage.
 spawn-at-startup "wl-paste --watch cliphist store"
 
 

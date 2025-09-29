@@ -44,6 +44,9 @@
     pkgs.inotify-tools
     pkgs.cameractrls
     pkgs.cliphist
+    pkgs.blueman
+    pkgs.swww
+    pkgs.waypaper
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
