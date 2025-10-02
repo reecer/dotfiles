@@ -262,6 +262,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
+spawn-at-startup "waypaper --random"
 
 // Clipboard history with cliphist. See binds section below for copy usage.
 spawn-at-startup "wl-paste --watch cliphist store"
