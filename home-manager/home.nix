@@ -108,6 +108,7 @@
       ls = "ls --color=auto";
       doy = "date +%j";
       gpsweek = "echo \"$((($(date +%s) - 315964800) / 604800 ))\"";
+      docker = "podman";
     };
 
     zplug = {
