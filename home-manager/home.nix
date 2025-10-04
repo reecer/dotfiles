@@ -108,7 +108,11 @@
       ls = "ls --color=auto";
       doy = "date +%j";
       gpsweek = "echo \"$((($(date +%s) - 315964800) / 604800 ))\"";
-      docker = "podman";
+      docker = "/usr/sbin/podman";
+    };
+
+    sessionVariables = {
+      DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock";
     };
 
     zplug = {
