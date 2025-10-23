@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "reece";
-  home.homeDirectory = "/home/reece";
+  home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/reece" else "/home/reece";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -34,10 +34,15 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # Common packages
     pkgs.git
     pkgs.neovim
     pkgs.bat
-    pkgs.ghostty
+    pkgs.zellij
+    # pkgs.ghostty
+  ] ++ (lib.optionals pkgs.stdenv.isLinux [
+    # Linux-specific packages
     pkgs.pavucontrol
     pkgs.networkmanager
     pkgs.networkmanagerapplet
@@ -48,7 +53,9 @@
     pkgs.blueman
     pkgs.swww
     pkgs.waypaper
-  ];
+  ]) ++ (lib.optionals pkgs.stdenv.isDarwin [
+    # macOS-specific packages (add any if needed)
+  ]);
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -88,12 +95,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Hyprland
-  # wayland.windowManager.hyprland.enable = true; # enable Hyprland
-  # programs.waybar.enable = true;
-  # programs.kitty.enable = true; # required for the default Hyprland config
-  # wayland.windowManager.hyprland.settings = {
-
   # Vi Mode
   # programs.broot.settings.modal = true;
   programs.zsh.setOptions = [ "VI" ];
@@ -109,10 +110,11 @@
       ls = "ls --color=auto";
       doy = "date +%j";
       gpsweek = "echo \"$((($(date +%s) - 315964800) / 604800 ))\"";
+    } // (lib.optionalAttrs pkgs.stdenv.isLinux {
       docker = "/usr/sbin/podman";
-    };
+    });
 
-    sessionVariables = {
+    sessionVariables = lib.optionalAttrs pkgs.stdenv.isLinux {
       DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock";
     };
 
