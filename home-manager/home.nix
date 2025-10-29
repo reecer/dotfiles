@@ -50,9 +50,10 @@
     pkgs.inotify-tools
     pkgs.cameractrls
     pkgs.cliphist
-    pkgs.blueman
+    pkgs.blueman # replace with overskride flatpak
     pkgs.swww
     pkgs.waypaper
+    pkgs.sunsetr
   ]) ++ (lib.optionals pkgs.stdenv.isDarwin [
     # macOS-specific packages (add any if needed)
   ]);

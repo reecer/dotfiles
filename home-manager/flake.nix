@@ -13,19 +13,35 @@
   outputs =
     { nixpkgs, home-manager, ... }:
     let
-      system = builtins.currentSystem;
-      pkgs = nixpkgs.legacyPackages.${system};
+      # Systems to support
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+
+      # Helper to generate homeConfigurations for each system
+      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      homeConfigurations."reece" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = forAllSystems (system:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [ ./home.nix ];
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+          # Optionally use extraSpecialArgs
+          # to pass through arguments to home.nix
+        }
+      ) // {
+        # Backwards compatibility: "reece" defaults to x86_64-linux
+        "reece" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [ ./home.nix ];
+        };
       };
     };
 }
