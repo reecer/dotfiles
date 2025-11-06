@@ -109,7 +109,7 @@
     shellAliases = {
       ll = "ls -l";
       ls = "ls --color=auto";
-      doy = "date +%j";
+      doy = "date -u +%j";
       gpsweek = "echo \"$((($(date +%s) - 315964800) / 604800 ))\"";
     } // (lib.optionalAttrs pkgs.stdenv.isLinux {
       docker = "/usr/sbin/podman";
