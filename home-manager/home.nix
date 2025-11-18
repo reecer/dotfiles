@@ -100,6 +100,9 @@
   # programs.broot.settings.modal = true;
   programs.zsh.setOptions = [ "VI" ];
 
+  programs.atuin = {
+    enable = true;
+  };
   # ZSH
   programs.zsh = {
     enable = true;
@@ -111,6 +114,9 @@
       ls = "ls --color=auto";
       doy = "date -u +%j";
       gpsweek = "echo \"$((($(date +%s) - 315964800) / 604800 ))\"";
+      d = "devbox";
+      ds = "devbox shell";
+      # winboot = "sudo efibootmgr -n 2 && systemctl reboot"
     } // (lib.optionalAttrs pkgs.stdenv.isLinux {
       docker = "/usr/sbin/podman";
     });
