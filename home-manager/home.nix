@@ -109,11 +109,17 @@
     syntaxHighlighting.enable = true;
     history.size = 10000;
 
+    initExtra = ''
+      # Initialize Devbox global shellenv
+      eval "$(devbox global shellenv)"
+    '';
+
     shellAliases = {
       ll = "ls -l";
       ls = "ls --color=auto";
       doy = "date -u +%j";
       gpsweek = "echo \"$((($(date +%s) - 315964800) / 604800 ))\"";
+      k = "kubectl";
       d = "devbox";
       ds = "devbox shell";
       # winboot = "sudo efibootmgr -n 2 && systemctl reboot"
