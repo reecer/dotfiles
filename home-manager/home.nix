@@ -36,6 +36,7 @@
     # '')
 
     # Common packages
+    pkgs.alacritty
     pkgs.git
     pkgs.neovim
     pkgs.bat
