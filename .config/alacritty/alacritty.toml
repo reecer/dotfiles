@@ -10,5 +10,5 @@ import = [
 [terminal]
 shell = { program = "zellij" }
 
-[window]
-decorations = "None"
+# [window]
+# decorations = "None"

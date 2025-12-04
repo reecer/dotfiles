@@ -4,7 +4,8 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "reece";
-  home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/reece" else "/home/reece";
+  home.homeDirectory = "/Users/reece";
+  # home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/reece" else "/home/reece";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -103,6 +104,7 @@
 
   programs.atuin = {
     enable = true;
+    flags = [ "--disable-up-arrow" ];
   };
   # ZSH
   programs.zsh = {
