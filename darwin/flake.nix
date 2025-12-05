@@ -11,9 +11,14 @@
     #   url = "github:nix-community/home-manager";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.cl-nix-lite.url = "github:r4v3n6101/cl-nix-lite/url-fix";
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, mac-app-util, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
       networking.hostName = "macbook";
@@ -44,7 +49,14 @@
 
       # Allow unfree packages
       nixpkgs.config.allowUnfree = true;
-      programs.zsh.enable = false;
+
+      # ZSH
+      programs.zsh = {
+        enable = true;
+        enableCompletion = true;
+        enableAutosuggestions = true;
+        enableFastSyntaxHighlighting = true;
+      };
 
       homebrew = {
           enable = true;
@@ -70,12 +82,18 @@
             "pure"
             "stow"
             "zellij"
-            "zsh"
           ];
 
       };
 
-      system.defaults.dock.autohide = true;
+      system.defaults = {
+          dock = {
+              autohide = true;
+              # persistent-apps = [
+              # "${pkgs.alacritty}/Applications/Alacritty.app/"
+              # ];
+          };
+      };
 
       services.aerospace = { 
           enable = true;
@@ -94,7 +112,8 @@
             };
             mode.main.binding = {
               #
-              cmd-h = [];
+              # cmd-h = [];
+              # cmd-h = "exec-and-forget zellij action move-focus left";
 
               # Layouts
               ctrl-cmd-slash = "layout tiles horizontal";
@@ -121,6 +140,8 @@
               ctrl-cmd-i = "workspace prev";
               ctrl-cmd-shift-o = "move-node-to-workspace next --focus-follows-window";
               ctrl-cmd-shift-i = "move-node-to-workspace prev --focus-follows-window";
+
+              ctrl-cmd-t = ["exec-and-forget open ${pkgs.alacritty}/Applications/Alacritty.app/" "workspace code"];
             };
             after-startup-command = [
               "exec-and-forget borders active_color=0xFF52CBBD inactive_color=0xff494d64 width=8.0"
@@ -147,11 +168,11 @@
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Reeces-MacBook-Air
+    # $ darwin-rebuild build --flake .#macbook
     darwinConfigurations."macbook" = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration
-        # home-manager.darwinModules.home-manager
+        mac-app-util.darwinModules.default
       ];
     };
   };

@@ -156,14 +156,16 @@ keybinds clear-defaults=true {
         bind "Super +" { Resize "Increase"; }
         bind "Super -" { Resize "Decrease"; }
         bind "Super =" { Resize "Increase"; }
-        bind "Super [" { PreviousSwapLayout; }
-        bind "Super ]" { NextSwapLayout; }
+
+        bind "Super [" { GoToPreviousTab; }
+        bind "Super ]" { GoToNextTab; }
         bind "Super f" { ToggleFloatingPanes; }
         bind "Super h" { MoveFocusOrTab "left"; }
-        bind "Super i" { MoveTab "left"; }
-        bind "Super j" { MoveFocus "down"; }
-        bind "Super k" { MoveFocus "up"; }
-        bind "Super l" { MoveFocusOrTab "right"; }
+        bind "Super i" { MoveFocus "up"; }
+        bind "Super j" { MoveFocus "left"; }
+        bind "Super k" { MoveFocus "down"; }
+        bind "Super l" { MoveFocus "right"; }
+
         bind "Super n" { NewPane; }
         bind "Super o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
