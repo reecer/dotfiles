@@ -34,4 +34,6 @@ bindings = [
     {key = "l", mods="Command", action = "ReceiveChar"},
     {key = "=", mods="Command", action = "ReceiveChar"},
     {key = "-", mods="Command", action = "ReceiveChar"},
+    {key = "=", mods="Option", action = "IncreaseFontSize"},
+    {key = "-", mods="Option", action = "DecreaseFontSize"},
 ]
