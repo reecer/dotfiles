@@ -35,6 +35,7 @@
       environment.systemPackages =
         [ pkgs.vim
 	        pkgs.devbox
+	        pkgs.cmake
         ];
 
       system.keyboard.enableKeyMapping = true;
@@ -80,6 +81,7 @@
             "git"
             "neovim"
             "pure"
+            "ripgrep"
             "stow"
             "zellij"
           ];
@@ -136,12 +138,13 @@
               ctrl-cmd-minus = "resize smart -25";
 
               # Workspaces
+              ctrl-cmd-n = "workspace x";
               ctrl-cmd-o = "workspace next";
               ctrl-cmd-i = "workspace prev";
               ctrl-cmd-shift-o = "move-node-to-workspace next --focus-follows-window";
               ctrl-cmd-shift-i = "move-node-to-workspace prev --focus-follows-window";
 
-              ctrl-cmd-t = ["exec-and-forget open ${pkgs.alacritty}/Applications/Alacritty.app/" "workspace code"];
+              ctrl-cmd-t = "exec-and-forget alacritty msg create-window";
             };
             after-startup-command = [
               "exec-and-forget borders active_color=0xFF52CBBD inactive_color=0xff494d64 width=8.0"
