@@ -43,9 +43,11 @@
       # system.keyboard.swapLeftCommandAndLeftAlt = true;
 
       fonts.packages = with pkgs; [
+          # nerd-fonts.fonts
         nerd-fonts.jetbrains-mono
         nerd-fonts.fira-code
         nerd-fonts.meslo-lg
+        nerd-fonts.sauce-code-pro
       ];
 
       # Allow unfree packages

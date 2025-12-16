@@ -4,7 +4,9 @@
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/ayu_mirage.toml"
+    "~/.config/alacritty/themes/themes/wombat.toml"
+    # "~/.config/alacritty/themes/themes/Cobalt2.toml"
+    # "~/.config/alacritty/themes/themes/challenger_deep.toml"
 ]
 
 # For some reason this create a shell without proper path?
@@ -15,7 +17,10 @@ import = [
 size = 17
 
 [font.normal]
-family = "JetbrainsMono Nerd Font"
+family = "SauceCodePro Nerd Font"
+# family = "JetbrainsMono Nerd Font"
+# family = "FiraCode Nerd Font"
+# family = "Menlo Nerd Font"
 
 [window]
 decorations = "Transparent"

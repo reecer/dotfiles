@@ -7,7 +7,7 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 #
 
 # atuin
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 autoload -U promptinit; promptinit
 prompt pure
 
