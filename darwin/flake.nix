@@ -72,14 +72,15 @@
             "FelixKratz/formulae"
           ];
           casks = [
-            "claude-code"
-            "atuin-desktop"
             "alacritty"
+            "claude-code"
+            "sublime-merge"
           ];
           brews = [ 
             "atuin"
             "bat"
             "borders" 
+            "direnv"
             "git"
             "neovim"
             "pure"
@@ -103,7 +104,7 @@
           enable = true;
           settings = {
             config-version = 2;
-            persistent-workspaces  = ["code" "browser" "mail"];
+            persistent-workspaces  = ["1" "2" "3" "4" "5"];
             # Disable cmd+h hide
             automatically-unhide-macos-hidden-apps = true;
             gaps = {
