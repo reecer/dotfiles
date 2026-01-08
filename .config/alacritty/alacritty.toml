@@ -42,3 +42,8 @@ bindings = [
     {key = "=", mods="Option", action = "IncreaseFontSize"},
     {key = "-", mods="Option", action = "DecreaseFontSize"},
 ]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\n\r"
