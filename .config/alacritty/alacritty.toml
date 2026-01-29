@@ -37,13 +37,10 @@ bindings = [
     {key = "j", mods="Command", action = "ReceiveChar"},
     {key = "k", mods="Command", action = "ReceiveChar"},
     {key = "l", mods="Command", action = "ReceiveChar"},
+    {key = "f", mods="Command", action = "ReceiveChar"},
     {key = "=", mods="Command", action = "ReceiveChar"},
     {key = "-", mods="Command", action = "ReceiveChar"},
     {key = "=", mods="Option", action = "IncreaseFontSize"},
     {key = "-", mods="Option", action = "DecreaseFontSize"},
+    {key = "Return", mods="Shift", chars = "\n\r"},
 ]
-
-[[keyboard.bindings]]
-key = "Return"
-mods = "Shift"
-chars = "\n\r"

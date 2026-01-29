@@ -1,3 +1,4 @@
+#!/bin/bash
 HOSTNAME="https://ultrawidewallpapers.net"
 
 echo "Fetching $HOSTNAME..."

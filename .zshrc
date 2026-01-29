@@ -13,6 +13,7 @@ eval "$(atuin init zsh --disable-up-arrow)"
 autoload -U promptinit; promptinit
 prompt pure
 
+
 # VIM
 bindkey -v
 
@@ -23,6 +24,7 @@ alias doy="date -u +%j"
 alias gpsweek="echo \"$((($(date +%s) - 315964800) / 604800 ))\""
 alias d="devbox"
 alias ds="devbox shell"
+alias k="kubectl"
 
 # 
 export EDITOR=nvim

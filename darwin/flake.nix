@@ -161,6 +161,9 @@
                 ctrl-cmd-shift-i = "move-node-to-workspace prev --focus-follows-window";
 
                 ctrl-cmd-t = "exec-and-forget alacritty";
+                ctrl-cmd-f = "fullscreen";
+                # Toggle macos widgets
+                ctrl-cmd-w = "exec-and-forget defaults write com.apple.WindowManager StandardHideWidgets -int $((1 - $(defaults read com.apple.WindowManager StandardHideWidgets 2>/dev/null || echo 0)))";
               };
               after-startup-command = [
                 "exec-and-forget borders active_color=0xFF52CBBD inactive_color=0xff494d64 width=8.0"
