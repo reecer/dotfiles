@@ -241,7 +241,9 @@ keybinds clear-defaults=true {
 // changing these requires a restart to take effect
 plugins {
     about location="zellij:about"
-    compact-bar location="zellij:compact-bar"
+    compact-bar location="zellij:compact-bar" {
+        tooltip "F9"
+    }
     configuration location="zellij:configuration"
     filepicker location="zellij:strider" {
         cwd "/"
@@ -275,7 +277,9 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "dracula"
+// theme "dracula"
+theme "kanagawa"
+// theme "iceberg-dark"
  
 // Choose the base input mode of zellij.
 // Default: normal
