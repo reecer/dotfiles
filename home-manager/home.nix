@@ -102,6 +102,7 @@
 
   programs.atuin = {
     enable = true;
+    flags = [ "--disable-up-arrow" ]; # or --disable-ctrl-r
   };
   # ZSH
   programs.zsh = {
