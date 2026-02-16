@@ -29,8 +29,9 @@ alias z="zellij"
 alias eval-ssh='eval $(ssh-agent -s) && ssh-add'
 alias summarize="claude \"summarize and review the uncommitted changes. See any issues? have any questions?\""
 
-# 
+# Variables
 export EDITOR=nvim
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 
 #
 # Functions

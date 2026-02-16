@@ -87,6 +87,7 @@
               "borders"
               "direnv"
               "git"
+              "git-lfs"
               "neovim"
               "node"
               "pure"
