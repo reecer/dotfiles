@@ -14,33 +14,20 @@ import = [
 # shell = { program = "/opt/homebrew/bin/zellij" }
 
 [font]
-size = 17
+size = 14
 
 [font.normal]
 family = "SauceCodePro Nerd Font"
 # family = "JetbrainsMono Nerd Font"
 # family = "FiraCode Nerd Font"
-# family = "Menlo Nerd Font"
 
 [window]
-decorations = "Transparent"
+decorations = "None"
 opacity = 0.9
-padding.x = 10
-padding.y = 25
 
 # So zellij can use these
 [keyboard]
 bindings = [
-    {key = "n", mods="Command", action = "ReceiveChar"},
-    {key = "i", mods="Command", action = "ReceiveChar"},
-    # {key = "h", mods="Command", command = "zellij action move-focus left"},
-    {key = "j", mods="Command", action = "ReceiveChar"},
-    {key = "k", mods="Command", action = "ReceiveChar"},
-    {key = "l", mods="Command", action = "ReceiveChar"},
-    {key = "f", mods="Command", action = "ReceiveChar"},
-    {key = "=", mods="Command", action = "ReceiveChar"},
-    {key = "-", mods="Command", action = "ReceiveChar"},
-    {key = "=", mods="Option", action = "IncreaseFontSize"},
-    {key = "-", mods="Option", action = "DecreaseFontSize"},
-    {key = "Return", mods="Shift", chars = "\n\r"},
+    {key = "=", mods="Alt", action = "IncreaseFontSize"},
+    {key = "-", mods="Alt", action = "DecreaseFontSize"},
 ]

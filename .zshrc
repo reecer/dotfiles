@@ -1,18 +1,11 @@
 # .zshrc
 
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-
-# This would prioritize Homebrew's binaries over system binaries...
-# export PATH="/opt/homebrew/bin:$PATH"
-#
-
 # atuin
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # Prompt theme
 autoload -U promptinit; promptinit
 prompt pure
-
 
 # VIM
 bindkey -v
@@ -47,4 +40,3 @@ bindkey -M vicmd 'y' vi-yank-xclip
 # source ~/.config/zsh/aliases.zsh
 # source ~/.config/zsh/functions.zsh
 
-. "$HOME/.local/bin/env"
