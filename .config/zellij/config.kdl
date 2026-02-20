@@ -149,21 +149,21 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
-        bind "Alt left" { MoveFocusOrTab "left"; }
+        bind "Alt left" { MoveFocus "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
-        bind "Alt right" { MoveFocusOrTab "right"; }
+        bind "Alt right" { MoveFocus "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
         bind "Alt [" { GoToPreviousTab; }
         bind "Alt ]" { GoToNextTab; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt h" { MoveFocusOrTab "left"; }
+        bind "Alt h" { MoveFocus "left"; }
         bind "Alt i" { MoveTab "left"; }
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
+        bind "Alt l" { MoveFocus "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
@@ -285,7 +285,69 @@ web_client {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "kanagawa"
+// theme "kanagawa"
+// theme "nightfox"
+ui {
+    pane_frames {
+        rounded_corners true
+        hide_session_name true
+    }
+}
+
+themes {
+    reece {
+        ribbon_selected {
+            base 0 0 0
+            background 80 250 123
+            emphasis_0 255 85 85
+            emphasis_1 255 184 108
+            emphasis_2 255 121 198
+            emphasis_3 98 114 164
+        }
+        ribbon_unselected {
+            base 255 255 255
+            background 100 115 140
+            emphasis_0 0 0 0
+            emphasis_1 0 0 0
+            emphasis_2 0 0 0
+            emphasis_3 0 0 0
+        }
+        text_unselected {
+            base 255 255 255
+            background 40 42 54
+            emphasis_0 255 184 108
+            emphasis_1 139 233 253
+            emphasis_2 80 250 123
+            emphasis_3 255 121 198
+        }
+        text_selected {
+            base 255 255 255
+            background 100 100 150
+            emphasis_0 255 184 108
+            emphasis_1 139 233 253
+            emphasis_2 80 250 123
+            emphasis_3 255 121 198
+        }
+        frame_selected {
+            base 0 255 0
+            background 0 0 0
+            emphasis_0 0 0 0
+            emphasis_1 0 0 0 
+            emphasis_2 0 0 0 
+            emphasis_3 0 0 0 
+        }
+        frame_unselected {
+            base 0 0 0
+            background 0 0 0
+            emphasis_0 0 0 0
+            emphasis_1 0 0 0
+            emphasis_2 0 0 0
+            emphasis_3 0 0 0
+        }
+    }
+}
+theme "reece"
+// theme "kanagawa"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -330,7 +392,7 @@ default_layout "compact"
 //   - true (default, enabled)
 //   - false
 // 
-pane_frames false
+// pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

@@ -24,6 +24,7 @@ alias summarize="claude \"summarize and review the uncommitted changes. See any 
 
 # 
 export EDITOR=nvim
+export PATH="$HOME/.local/bin:$PATH"
 
 #
 # Functions
@@ -39,4 +40,5 @@ bindkey -M vicmd 'y' vi-yank-xclip
 
 # source ~/.config/zsh/aliases.zsh
 # source ~/.config/zsh/functions.zsh
+
 

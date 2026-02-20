@@ -103,6 +103,9 @@ input {
     // automatically.
     position x=1280 y=0
 }
+output "eDP-1" {
+    scale 1.25
+}
 
 output "Dell Inc. AW3425DWM 9YF4444" {
     mode "3440x1440@179.989"
@@ -268,11 +271,11 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
-spawn-at-startup "waypaper --random"
+spawn-at-startup "waypaper" "--random"
 spawn-at-startup "sunsetr"
 
 // Clipboard history with cliphist. See binds section below for copy usage.
-spawn-at-startup "wl-paste --watch cliphist store"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 
 
@@ -281,7 +284,7 @@ spawn-at-startup "wl-paste --watch cliphist store"
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -578,12 +581,12 @@ binds {
     // * adjust width as a percentage of screen width: "-10%" or "+10%"
     // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
     // set-column-width "100" will make the column occupy 200 physical screen pixels.
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Ctrl+Alt+Minus { set-column-width "-10%"; }
+    Ctrl+Alt+Equal { set-column-width "+10%"; }
 
     // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    Ctrl+Alt+Shift+Minus { set-window-height "-10%"; }
+    Ctrl+Alt+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }

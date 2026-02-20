@@ -28,6 +28,8 @@ opacity = 0.9
 # So zellij can use these
 [keyboard]
 bindings = [
-    {key = "=", mods="Alt", action = "IncreaseFontSize"},
-    {key = "-", mods="Alt", action = "DecreaseFontSize"},
+    {key = "=", mods="Super", action = "IncreaseFontSize"},
+    {key = "-", mods="Super", action = "DecreaseFontSize"},
+    {key = "Return", mods="Shift", chars = "\u001B\r"},
 ]
+
