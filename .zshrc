@@ -25,6 +25,7 @@ alias summarize="claude \"summarize and review the uncommitted changes. See any 
 # 
 export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 #
 # Functions

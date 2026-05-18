@@ -1,0 +1,8 @@
+layout {
+    pane command="nvim" {
+        args "+enew"
+    }
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+}

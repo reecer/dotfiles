@@ -41,6 +41,7 @@ window#waybar {
 
 #clock,
 #pulseaudio,
+#battery,
 #custom-logo,
 #custom-power,
 #custom-spotify,
@@ -100,6 +101,23 @@ window#waybar.empty #window {
 
 #pulseaudio.muted {
   color: #a6adc8;
+}
+
+#battery {
+  color: #a6e3a1;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #94e2d5;
+}
+
+#battery.warning {
+  color: #f9e2af;
+}
+
+#battery.critical {
+  color: #f38ba8;
 }
 
 #custom-logo {

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+# Live-grep ~/notes via ripgrep, pick a match in fuzzel, open in alacritty/nvim at line.
+
+NOTES_DIR="${NOTES_DIR:-$HOME/notes}"
+mkdir -p "$NOTES_DIR"
+
+choice=$(
+    cd "$NOTES_DIR" \
+        && rg --line-number --no-heading --color=never --smart-case '.' 2>/dev/null \
+        | fuzzel --dmenu --prompt 'notes> ' -w 120
+)
+
+[ -z "$choice" ] && exit 0
+
+file=${choice%%:*}
+rest=${choice#*:}
+line=${rest%%:*}
+
+exec alacritty -e nvim "+${line}" -- "$NOTES_DIR/$file"

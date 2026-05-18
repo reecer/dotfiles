@@ -368,10 +368,12 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty" "-e" "zellij"; }
+    Ctrl+Alt+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty" "-e" "zellij"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Ctrl+Alt+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+N hotkey-overlay-title="Search Notes: notes-search" { spawn-sh "exec $HOME/.local/bin/notes-search"; }
+    Mod+E hotkey-overlay-title="Open Neovim in Zellij" { spawn "alacritty" "-e" "zellij" "--layout" "nvim"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
