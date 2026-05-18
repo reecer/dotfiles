@@ -12,7 +12,7 @@
         "sway/mode",
         "sway/scratchpad"
   ],
-  "modules-center": ["mpris"],
+  "modules-center": ["custom/spotify"],
   "modules-right": [
     "cpu",
     "memory",
@@ -31,18 +31,6 @@
     "on-click-right": "spotifatius toggle-liked",
     "on-click-middle": "playerctl -p spotify next",
     "exec": "spotifatius monitor",
-  },
-  "mpris": {
-    "player": "spotify",
-    "dynamic-order": ["artist", "title"],
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "status-icons": {
-      "paused": "",
-    },
-    "player-icons": {
-      "default": "",
-    },
   },
   "tray": {
     "show-passive-items": true,
