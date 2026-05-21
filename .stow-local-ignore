@@ -1,2 +1,6 @@
-.git
+\.git
+\.gitignore
+\.gitmodules
 wallpapers
+CLAUDE\.md
+nixos
