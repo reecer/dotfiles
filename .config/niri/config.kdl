@@ -268,7 +268,8 @@ layout {
 // See the binds section below for more spawn examples.
 
 // Startup programs
-spawn-at-startup "waybar"
+// waybar is managed by a systemd user service (Restart=on-failure) so it
+// auto-recovers from its output-removal crash on monitor sleep/unplug.
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "waypaper" "--random"
