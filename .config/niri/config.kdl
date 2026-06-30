@@ -3,6 +3,15 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
+// Cursor theme. niri defaults to "default", which isn't an installed theme,
+// so named cursors (e.g. the hand/pointer on hovered links) fail to resolve.
+// Point at Adwaita (installed) so apps show the proper pointer on hover.
+// niri exports XCURSOR_THEME/XCURSOR_SIZE to spawned clients from this.
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
@@ -266,6 +275,13 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
+
+// X11 apps (OrcaSlicer, etc.) via niri's native xwayland-satellite
+// integration: niri spawns it on-demand and sets DISPLAY for spawned
+// children automatically. Requires xwayland-satellite in systemPackages.
+xwayland-satellite {
+    path "xwayland-satellite"
+}
 
 // Startup programs
 // waybar is managed by a systemd user service (Restart=on-failure) so it

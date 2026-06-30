@@ -4,7 +4,7 @@
 // top-week, great-16-9), and downloads them sequentially. Skips files that
 // already exist. Respects Cloudflare rate limits via Retry-After.
 //
-// Usage: go run ultrawidewallpapers.go [-tabs top-week,recent] [-all] [-o .]
+// Usage: go run ultrawidewallpapers.go [-tabs top-week,recent] [-all] [-o ultrawidewallpapers]
 package main
 
 import (
@@ -38,7 +38,7 @@ var (
 func main() {
 	tabsFlag := flag.String("tabs", "top-week", "comma-separated tab names")
 	all := flag.Bool("all", false, "download from all tabs")
-	outDir := flag.String("o", ".", "output directory")
+	outDir := flag.String("o", "ultrawidewallpapers", "output directory")
 	flag.Parse()
 
 	// Cookie jar is required — server returns 429 without session cookies.
